@@ -1,8 +1,18 @@
 
 function renderStudents(students) {
+    var loadAttend = students.map(drawAttend).join("");
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(students)}</code>
+        <h1 style="text-align:center; font-weight:bold;">Roll Call!</h1>
+        ${loadAttend}
+    `
+}
+
+function drawAttend(students) {
+    return `
+        
+        <div style ="border: 1px solid black; text-align: center;">
+            <h2>${students.name}</h2>
+            <h4>${students.isPresent}</h4>
         </div>
     `
 }
@@ -35,3 +45,7 @@ function students() {
 
     content.innerHTML = renderStudents(studentsAbstraction);
 }
+
+//<div class="text-center mt-5">
+//<code>${JSON.stringify(students)}</code>
+//</div>

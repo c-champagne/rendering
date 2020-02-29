@@ -2,21 +2,22 @@
 function renderCircles(circles) {
     // HINT: You probably need to write a for loop!
     //       Or, if you're feeling fancy, use .map() 
-    var loadCir = circles.map(drawCircle).join("");
+    function drawCircle(circ) {
+        return `
+            <div style ="width: ${circ.radius}px;
+                         height: ${circ.radius}px;
+                         background-color: ${circ.color};
+                         border-radius: ${circ.radius}px;
+                         margin: 5px auto;">
+            </div>`
+    }
+ 
     return `
-            ${loadCir}
+            ${circles.map(drawCircle).join("")}
     `
 }
 
-function drawCircle(circ) {
-    return `
-        <div style ="width: ${circ.radius}px;
-                     height: ${circ.radius}px;
-                     background-color: ${circ.color};
-                     border-radius: ${circ.radius}px;
-                     margin: 5px auto;">
-        </div>`
-}
+
 
 function circles() {
     var content = document.getElementById('content');

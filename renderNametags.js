@@ -1,21 +1,21 @@
 
 function renderNametags(nametags) {
-    var loadNameTags = nametags.map(drawNametag).join("");
+    function drawNametag(nametags) {
+        return `
+            <div style="border: solid 1px black; text-align: center; width: 400px; height: 150px;">
+                <div class="header" style="background-color: blue; color: white;">
+                    <h2>Hello, my name is:</h2></div><br>
+                    <h2>${nametags}</h2>
+            </div>                   
+        `
+    }
+    
     return `
-        ${loadNameTags}
+        ${nametags.map(drawNametag).join("")}
     `
 }
 
-function drawNametag(nametags) {
-    return `
-        <div style="border: solid 1px black; text-align: center; width: 400px; height: 150px;">
-            <div class="header" style="background-color: blue; color: white;">
-                <h2>Hello, my name is:</h2></div><br>
-                <h2 style="margin: 0 auto;">${nametags}</h2>
-        </div>
-                                
-    `
-}
+
 
 function nametags() {
     var content = document.getElementById('content');
