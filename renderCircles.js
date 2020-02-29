@@ -2,11 +2,20 @@
 function renderCircles(circles) {
     // HINT: You probably need to write a for loop!
     //       Or, if you're feeling fancy, use .map() 
+    var loadCir = circles.map(drawCircle).join("");
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(circles)}</code>
-        </div>
+            ${loadCir}
     `
+}
+
+function drawCircle(circ) {
+    return `
+        <div style ="width: ${circ.radius}px;
+                     height: ${circ.radius}px;
+                     background-color: ${circ.color};
+                     border-radius: ${circ.radius}px;
+                     margin: 5px auto;">
+        </div>`
 }
 
 function circles() {
@@ -34,3 +43,4 @@ function circles() {
     content.innerHTML = renderCircles(circlesAbstraction);
 
 }
+
