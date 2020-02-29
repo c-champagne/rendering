@@ -1,11 +1,11 @@
 
 function renderNametags(nametags) {
-    function drawNametag(nametags) {
+    function drawNametag(name) {        //changed this parameter to make more "sense"
         return `
             <div style="border: solid 1px black; text-align: center; width: 400px; height: 150px;">
                 <div class="header" style="background-color: blue; color: white;">
                     <h2>Hello, my name is:</h2></div><br>
-                    <h2>${nametags}</h2>
+                    <h2>${name}</h2>            
             </div>                   
         `
     }
